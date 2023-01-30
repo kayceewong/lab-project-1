@@ -25,9 +25,9 @@ body {
   text-align: center;
 }
 
-#options-container {
+#options-container div {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin:auto
+  margin: 1.2em 0 2.4em 0;
 }
