@@ -15,8 +15,3 @@ let category = {
 
   fruits: ["apple", "banana", "watermelon", "orange", "pineapple", "papaya", "raspberry", "cherry", "lemon", "strawberry"],
 };
-
-//Start New Game
-newGameButton.addEventListener('click', function () {
-  init('reset');
-});
