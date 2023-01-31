@@ -1,17 +1,26 @@
-//
-const categoryContainer = document.getElementById('options-container');
-const letterContainer = document.getElementById('letter-container');
-const userInputSection = document.getElementById('user-input-section');
-const newGameContainer = document.getElementById('new-game-container');
-const newGameButton = document.getElementById('new-game-button');
-const result = document.getElementById('result-text');
-const canvas = document.getElementById('canvas');
+let words = ["Hong Kong", "Hungary", "Iceland", "Israel", "Albania", "Andorra", "Australia", "Canada", "Venezuela", "India","Chicken", "Dolphin", "Elephant", "Hedgehog", "Parrot", "Eagle", "Goldfish", "Squirrel", "Panther", "Swordfish", "apple", "banana", "watermelon", "orange", "pineapple", "papaya", "raspberry", "cherry", "lemon", "strawberry"];
 
-//Options for buttons and related words for the options
-let category = {
-  countries: ["Hong Kong", "Hungary", "Iceland", "Israel", "Albania", "Andorra", "Australia", "Canada", "Venezuela", "India",],
+let answer = '';
+let maxWrong = 6;
+let mistakes = 0;
+let guessed = [];
+let wordStatus = null;
 
-  animals: ["Chicken", "Dolphin", "Elephant", "Hedgehog", "Parrot", "Eagle", "Goldfish", "Squirrel", "Panther", "Swordfish",],
+function randomWord() {
+  answer = words[Math.floor(Math.random() * category.length)];
+}
 
-  fruits: ["apple", "banana", "watermelon", "orange", "pineapple", "papaya", "raspberry", "cherry", "lemon", "strawberry"],
-};
+function handleGuess(chosenLetter) {
+  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+  document.getElementById(chosenLetter).setAttribute('disabled', true);
+
+  if (answer.indexOf(chosenLetter) >= 0) {
+    guessedWord();
+    checkIfGameWon();
+  } else if (answer.indexOf(chosenLetter) === -1) {
+    mistakes++;
+    updateMistakes();
+    checkIfGameLost();
+    updateHangmanPicture();
+  }
+}
