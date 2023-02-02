@@ -9,12 +9,13 @@ body {
   background-color: goldenrod;
 }
 
-.header {
-  font-family: "Garamond", sans-serif;
-  display: flex;
-  justify-content: center;
-  font-size: 2em;
-  margin: 0.5em 0 1.0em 0;
+.animate__animated.animate__pulse {
+  display: center;
+  margin: 0 0.5rem;
+  --animate-duration: 2s;
+  text-align: center;
+  color: darkblue;
+  font-weight: bold;
 }
 
 .score {
