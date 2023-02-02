@@ -1,24 +1,24 @@
-let words = [`Hong Kong`, `Hungary`, `Iceland`, `Israel`, `Albania`, `Andorra`, `Australia`, `Canada`, `Venezuela`, `India`,`Chicken`, `Dolphin`, `Elephant`, `Hedgehog`, `Parrot`, `Eagle`, `Goldfish`, `Squirrel`, `Panther`, `Swordfish`, `apple`, `banana`, `watermelon`, `orange`, `pineapple`, `papaya`, `raspberry`, `cherry`, `lemon`, `strawberry`];
+let words = [`hong kong`, `hungary`, `iceland`, `israel`, `albania`, `andorra`, `australia`, `canada`, `venezuela`, `algeria`, `egypt`, `ethiopia`, `finland`, `france`, `germany`, `malaysia`, `mexico`, `norway`, `poland`];
 
 let answer = '';
-let maxWrong = 6;
+let maxWrong = 10;
 let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
 
 function randomWord() {
-  answer = words[Math.floor(Math.random() * words)];
+  answer = words[Math.floor(Math.random() * words.length)];
 }
 
 function generateButtons() {
-  let buttonsHTML = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter =>
+  let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
     `
       <button
-        class="btn btn-sm btn-primary m-1"
-        id='` + letter + `'
-        onClick="handleGuess('` + letter + `')"
+        class="btn btn-sm btn-primary m-2"
+        id='${letter}'
+        onClick="handleGuess('${letter}')"
       >
-        ` + letter + `
+        ${letter}
       </button>
     `).join('');
 
@@ -46,7 +46,7 @@ function updateHangmanPicture() {
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    document.getElementById('keyboard').innerHTML = 'You are saved!!!';
   }
 }
 

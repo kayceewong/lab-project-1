@@ -1,5 +1,4 @@
 * {
-  text-align: center;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -7,17 +6,29 @@
 }
 
 body {
-  background-color: lightblue;;
+  background-color: goldenrod;
 }
 
-.container {
-  font-size: 16px;
-  background-color: beige;
-  width: 90vw;
-  max-width: 34em;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  padding: 3em;
-  }
+.header {
+  font-family: "Garamond", sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  margin: 0.5em 0 1.0em 0;
+}
+
+.score {
+  font-family: "Garamond", sans-serif;
+  display: flex;
+  justify-content:center;;
+  font-size: 1.2em;
+}
+
+#wordSpotlight {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  background-color: #f4c531;
+  border: 3px solid #000000;
+  color: #000000;
+  border-radius: 0.2em;
+}
