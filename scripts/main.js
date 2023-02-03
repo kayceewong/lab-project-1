@@ -46,7 +46,7 @@ function updateHangmanPicture() {
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You are saved!!!';
+    document.getElementById('keyboard').innerHTML = 'You are Saved!!!';
   }
 }
 
